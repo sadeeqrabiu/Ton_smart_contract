@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <div align="center">
   <a href="https://ton.org">
     <picture>
