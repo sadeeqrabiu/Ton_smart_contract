@@ -3,7 +3,10 @@ import { Counter } from '../wrappers/Counter';
 import { NetworkProvider } from '@ton/blueprint';
 
 export async function run(provider: NetworkProvider) {
-    const counter = provider.open(await Counter.fromInit());
+
+
+    const randomInt = BigInt(Math.floor(Math.random() * 100));
+    const counter = provider.open(await Counter.fromInit(randomInt));
 
     await counter.send(
         provider.sender(),
@@ -18,5 +21,6 @@ export async function run(provider: NetworkProvider) {
 
     await provider.waitForDeploy(counter.address);
 
+    console.log("id", await counter.getId);
     // run methods on `counter`
 }
