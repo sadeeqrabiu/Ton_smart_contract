@@ -18,8 +18,9 @@ contract Counter with Deployable {
 
     }
 
-
-
+    receive(msg: Add){
+        self.counter += msg.amount;
+    }
 
 //get function
     get fun counter(): Int {
